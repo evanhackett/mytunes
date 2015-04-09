@@ -18,14 +18,22 @@ var SongQueue = Songs.extend({
     }, this);
 
     this.on('dequeue', function(model) {
+       if (this.at(0) === model) {
+        var wasFirst = true;
+       }
       this.remove(model);
+      if (wasFirst) {
+        this.playFirst();
+      }
 
     }, this);
 
   },
 
   playFirst: function() {
-    this.at(0).play();
+    if (this.length > 0) {
+      this.at(0).play();
+    }
   },
 
 

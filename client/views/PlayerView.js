@@ -12,7 +12,6 @@ var PlayerView = Backbone.View.extend({
   },
 
   initialize: function() {
-
   },
 
   setSong: function(song){
