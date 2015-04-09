@@ -19,7 +19,7 @@ var SongQueue = Songs.extend({
 
     this.on('dequeue', function(model) {
       this.remove(model);
-      
+
     }, this);
 
   },
