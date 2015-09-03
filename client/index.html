@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
   <body>
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
@@ -30,6 +33,11 @@
 
         // put the view onto the screen
         $('body').append(appView.render());
+
+        // add awesomeness, hide it by default
+        $('body').append('<img id="bitdance" src="assets/bitdance.gif">');
+        $('#bitdance').hide();
+
       });
     </script>
   </body>

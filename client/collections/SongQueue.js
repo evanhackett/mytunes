@@ -17,6 +17,7 @@ var SongQueue = Songs.extend({
     }, this);
 
     this.on('dequeue', function(model) {
+      console.log(this);
        if (this.at(0) === model) {
         var wasFirst = true;
        }

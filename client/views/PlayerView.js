@@ -8,6 +8,13 @@ var PlayerView = Backbone.View.extend({
   events : {
     'ended': function() {
       this.model.ended();
+      $('#bitdance').hide();
+    },
+    'play': function() {
+      $('#bitdance').show();
+    },
+    'pause': function() {
+      $('#bitdance').hide();
     }
   },
 
@@ -16,6 +23,10 @@ var PlayerView = Backbone.View.extend({
 
   setSong: function(song){
     this.model = song;
+    // hide the dance gif if there is no song
+    if (this.model === '') {
+      $('#bitdance').hide();
+    }
     this.render();
   },
 

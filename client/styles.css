@@ -1,0 +1,41 @@
+.librarySong {
+  cursor: pointer;
+}
+
+.librarySong:hover{
+  background-color: lightblue;
+}
+
+.queueSong {
+  cursor: pointer;
+}
+
+.queueSong:hover {
+  background-color: #FF5C5A;
+}
+
+td {
+  padding: 5px;
+  text-align: center;
+}
+
+tr td:last-child {
+  text-align: left;
+}
+
+th {
+   text-align: left;
+}
+
+@font-face {
+  font-family: '8BITWONDERNominal';
+  src: url(assets/8bit_wonder/8-BIT\ WONDER.TTF);
+}
+
+body {
+   font-family: '8BITWONDERNominal'; 
+   font-weight: normal; 
+   font-style: normal; 
+   color: white;
+   background-color: black;
+}
