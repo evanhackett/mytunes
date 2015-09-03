@@ -39,3 +39,11 @@ body {
    color: white;
    background-color: black;
 }
+
+#queue {
+  color: red;
+}
+
+#library {
+  color: red;
+}
