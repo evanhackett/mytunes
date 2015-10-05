@@ -72,6 +72,15 @@ describe('SongQueue', function() {
       expect(removeSpy).to.have.been.called;
       SongQueue.prototype.remove.restore();
     });
+
+    describe("if it wasn't the currently playing song", function() {
+      it("shouldn't remove the current song", function() {
+        var songQueue = new SongQueue([songData1, songData2]);
+        song1 = songQueue.at(0);
+        songQueue.at(1).dequeue();
+        expect(songQueue.at(0)).to.equal(song1);
+      });
+    });
   });
 
   describe('playFirst', function() {

@@ -51,6 +51,17 @@ describe('PlayerView', function() {
       $(appView.playerView.el).trigger('ended');
       expect(appView.playerView.model).to.equal(thirdSong);
     });
+
+    it("does nothing when a song besides the currently playing song is dequeued", function() {
+      var firstSong = library.at(0), 
+          secondSong = library.at(1),
+          songQueue = appView.model.get('songQueue');
+      songQueue.add(firstSong);
+      songQueue.add(secondSong);
+      songQueue.playFirst();
+      songQueue.at(1).dequeue();
+      expect(appView.playerView.model).to.equal(firstSong);
+    });
   });
 
 });
