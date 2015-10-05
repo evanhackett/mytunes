@@ -23,7 +23,9 @@ var AppModel = Backbone.Model.extend({
 
     // stop playing the song by setting the current song to an empty string
     params.library.on('dequeue', function(song) {
-      this.set('currentSong', '');
+      if (this.get('currentSong') === song) {
+        this.set('currentSong', '');
+      }
     }, this);
   }
 
